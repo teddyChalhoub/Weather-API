@@ -4,50 +4,30 @@ import MostlyCloudy from "../img/weather-icons/mostlycloudy.svg";
 import Sunny from "../img/weather-icons/clear.svg";
 
 import "../App.css";
-
+const url = MostlyCloudy;
 class HourlyWeather extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: this.props.hourlyData,
+    };
+  }
   render() {
     return (
-    //   <div class="app__main">
-        <div className="temp__per__hour">
-          <div className="p__text__size">
-            <p>03:00</p>
-            <img className="img__little__size" src={MostlyCloudy} />
-            <p>8°C</p>
-          </div>
-
-          <div className="p__text__size">
-            <p>06:00</p>
-            <img className="img__little__size" src={MostlyCloudy} alt="" />
-            <p>9°C</p>
-          </div>
-          <div className="p__text__size">
-            <p>09:00</p>
-            <img className="img__little__size" src={Sunny} />
-            <p>14°C</p>
-          </div>
-          <div className="p__text__size">
-            <p>12:00</p>
-            <img className="img__little__size" src={Sunny} alt="" />
-            <p>17°C</p>
-          </div>
-          <div className="p__text__size">
-            <p>15:00</p>
-            <img className="img__little__size" src={Sunny} alt="" />
-            <p>18°C</p>
-          </div>
-          <div className="img__little__size" className="p__text__size">
-            <p>18:00</p>
-            <img className="img__little__size" src={Sunny} alt="" />
-            <p>16°C</p>
-          </div>
-          <div className="p__text__size">
-            <p>21:00</p>
-            <img className="img__little__size" src={MostlyCloudy} alt="" />
-            <p>13°C</p>
-          </div>
-        </div>
-    
+      <div className="temp__per__hour">
+        {this.state.data.slice(4, 11).map((data, index) => {
+          return (
+            <div className="p__text__size" key={index}>
+              <p>{data.time}</p>
+              <img
+                className="img__little__size"
+                src={data.id == 501 ? Sunny : MostlyCloudy}
+              />
+              <p>{Math.round(data.temp)}°C</p>
+            </div>
+          );
+        })}
+      </div>
     );
   }
 }

@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import Search from "./components/Search";
-import CurrentWeather from "./components/CurrentWeather"
-import HourlyWeather from "./components/HourlyWeather"
+import FetchData from "./components/FetchData";
 
 import SayHi, { SayHello } from "./components/WeatherItem";
-import fakeWeatherData from "./fakeWeatherData.json";
-
-
 
 import "./App.css";
 
@@ -25,13 +21,15 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        {console.log(this.props.data)}
+        {console.log(this.props.hourlyData)}
+       
         <div className="search">
           <Search handleInput={this.handleInputChange} />
         </div>
         <div className="app__main temp__weather">
-         <CurrentWeather />
-         <HourlyWeather />
-        
+
+           <FetchData />
         </div>
       </div>
     );
