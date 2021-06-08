@@ -1,8 +1,5 @@
 import React from "react";
- 
 
-import clear from "../img/weather-icons/clear.svg";
-import FetchData from "./FetchData";
 import "./Search.css";
 
 class Search extends React.Component {
@@ -15,9 +12,11 @@ class Search extends React.Component {
   };
 
   render() {
+
     return (
       <div>
         <input
+          style={{ backgroundColor: this.props.colorSearch }}
           type="text"
           id="input-name"
           placeholder="Type in a city name"
@@ -25,7 +24,12 @@ class Search extends React.Component {
             this.setState({ input: event.target.value });
           }}
         />
-        <button onClick={this.onTrigger}>FIND WEATHER</button>
+        <button
+          style={{ backgroundColor: this.props.colorButton }}
+          onClick={this.onTrigger}
+        >
+          FIND WEATHER
+        </button>
       </div>
     );
   }

@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #9ccef4;
 }
 
 .app {
   height: 100vh;
   width: 100vw;
+  background-color: #9ccef4;
   transition: background-color 1s ease-in;
 }
 
@@ -27,10 +27,12 @@ body {
 .search,
 input {
   background-color: #769eda;
+  transition: background-color 1s ease-in;
 }
 
 .search {
   padding: 1.5rem;
+  
 }
 
 button,
@@ -89,6 +91,7 @@ p {
   align-items: center;
   margin-top: 2rem;
 }
+
 .temp__text__current {
   margin-top: 3rem;
 }
@@ -101,8 +104,8 @@ span {
   margin-top: 1rem;
 }
 
-.hourlyDisplay{
-  width:70%;
+.hourlyDisplay {
+  width: 70%;
 }
 
 .p__text__size {
@@ -111,12 +114,6 @@ span {
 
 .p__font__style {
   font-weight: bold;
-}
-
-.img__little__size {
-  width: 3rem;
-  height: 3rem;
-  padding-bottom: 1rem;
 }
 
 .weather__title {
