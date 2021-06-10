@@ -1,12 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .app {
   height: 100vh;
   width: 100vw;
+  background-color: #9ccef4;
   transition: background-color 1s ease-in;
 }
 
 .app__header,
 .app__main {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +24,136 @@
 
 /*  Search bar */
 
+.search,
+input {
+  background-color: #769eda;
+  transition: background-color 1s ease-in;
+}
+
+.search {
+  padding: 1.5rem;
+  
+}
+
+button,
+input {
+  border: 0;
+}
+
+button {
+  outline: none;
+  margin-left: 0.5rem;
+  background-color: #5879c7;
+  padding: 0.5rem;
+  font-family: "Raleway", sans-serif;
+}
+input::placeholder,
+input {
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+.temp__weather {
+  margin: auto;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 0.01rem black solid;
+  padding: 0.4rem 0.4rem 0.4rem 0;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  place-content: "Type in a city name";
+}
+
 /* Current weather */
 
+.temp__text {
+  margin-bottom: 2rem;
+}
+
+.main__title {
+  color: white;
+}
+
+p {
+  text-align: center;
+  margin-top: 0;
+}
+
+.p__blue {
+  color: #091948;
+}
+
+.temp__per__hour {
+  display: grid;
+  grid-template-columns: repeat(7,8%);
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.temp__text__current {
+  margin-top: 3rem;
+}
+
+span {
+  margin: 0 0.5rem;
+}
+
+.temp__hour {
+  margin-top: 1rem;
+}
+
+.hourlyDisplay {
+  width: 70%;
+}
+
+.p__text__size {
+  font-size: 0.7rem;
+}
+
+.p__font__style {
+  font-weight: bold;
+}
+
+.weather__title {
+  margin: auto;
+  width: 9.375rem;
+  height: 9.375rem;
+}
+
 div {
-  border: 5px solid red;
+  /* border: 5px solid red; */
+}
+
+@media (max-width: 786px) {
+  .main__weather {
+    width: 50%;
+    margin: auto;
+  }
+
+  .temp__per__hour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  button {
+    margin-top: 1rem;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .main__weather {
+    width: 70%;
+  }
+}
+
+@media (max-width: 300px) {
+  .div__up {
+    width: 100%;
+  }
 }
